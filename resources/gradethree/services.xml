@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- This file was auto-generated from WSDL --><!-- by the Apache Axis2 version: 1.4.1  Built on : Aug 19, 2008 (10:13:39 LKT) --><serviceGroup>
+    <service name="GradeThreeMath">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="gradethree.org.tempuri.GradeThreeMathMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">gradethree.org.tempuri.GradeThreeMathSkeleton</parameter>
+        <parameter name="useOriginalwsdl">false</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="Addition" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://tempuri.org/">
+            <actionMapping>Addition</actionMapping>
+            <outputActionMapping>http://tempuri.org/GradeThreeMathPortType/AdditionResponse</outputActionMapping>
+        </operation>
+        <operation name="Devision" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://tempuri.org/">
+            <actionMapping>Devision</actionMapping>
+            <outputActionMapping>http://tempuri.org/GradeThreeMathPortType/DevisionResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

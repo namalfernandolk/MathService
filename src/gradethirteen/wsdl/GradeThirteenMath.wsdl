@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://tempuri.org/" name="GradeThirteenMathService">
+
+	<wsdl:types>
+		<xs:schema>
+			<xs:import namespace="http://tempuri.org/" schemaLocation="xsd/Math.xsd" />
+		</xs:schema>
+	</wsdl:types>
+
+
+
+
+	<!-- Define request and response messages -->
+	
+	<wsdl:message name="AdditionRequest">
+		<wsdl:part name="AdditionRQ" element="tns:AdditionRequest" />
+	</wsdl:message>
+	
+	<wsdl:message name="AdditionResponse">
+		<wsdl:part name="AdditionRS" element="tns:AdditionResponse" />
+	</wsdl:message>
+
+	<wsdl:message name="DevisionRequest">
+		<wsdl:part name="DevisionRQ" element="tns:DevisionRequest" />
+	</wsdl:message>
+	
+	<wsdl:message name="DevisionResponse">
+		<wsdl:part name="DevisionRS" element="tns:DevisionResponse" />
+	</wsdl:message>
+
+
+
+
+	<!-- Define operation and reference messages -->
+
+	<wsdl:portType name="GradeThirteenMathPortType">
+
+		<wsdl:operation name="Addition">
+			<wsdl:input message="tns:AdditionRequest" />
+			<wsdl:output message="tns:AdditionResponse" />
+		</wsdl:operation>
+
+		<wsdl:operation name="Devision">
+			<wsdl:input message="tns:DevisionRequest" />
+			<wsdl:output message="tns:DevisionResponse" />
+		</wsdl:operation>
+
+	</wsdl:portType>
+
+
+	<!-- Define SOAP binding -->
+
+	<wsdl:binding name="GradeThirteenMathBinding" type="tns:GradeThirteenMathPortType">
+
+		<!-- Use document style and not rpc -->
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" />
+
+		<!-- Use 'literal' to include OTA XML as-is -->
+		<wsdl:operation name="Addition">
+			<soap:operation soapAction="Addition" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+		<wsdl:operation name="Devision">
+			<soap:operation soapAction="Devision" style="document" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+
+	</wsdl:binding>
+
+	<wsdl:service name="GradeThirteenMath">
+		<wsdl:port name="GradeThirteenMathPort" binding="tns:GradeThirteenMathBinding">
+			<soap:address
+				location="http://localhost:8081/axis2/services/GradeThirteenMath" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
