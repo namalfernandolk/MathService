@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project basedir="." default="jar.server" name="RezWebServices">
-	<!--
-	 * @author sameera
-	 * @ 01-12-2009
-    -->
+<project basedir="." default="jar.server" name="MathServices">
+
 	<property environment="env" />
 	<property name="axis2.home" value="/rezsystem/Axis2/axis2-1.4.1/" />
 	<property name="project.base.dir" value="." />
