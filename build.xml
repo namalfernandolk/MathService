@@ -105,6 +105,46 @@
 				<include name="gradethirteen/**" />
 			</fileset>
 		</jar>
+		
+			<echo>Building GradeTenMath AAR</echo>
+			<delete dir="${classes}/META-INF" />
+			<copy toDir="${classes}/META-INF" failonerror="false">
+				<fileset dir="${resources}/gradeten">
+					<include name="*.xml" />
+					<include name="*.wsdl" />
+					<include name="*.xsd" />
+				</fileset>
+			</copy>
+
+			<jar destfile="${lib}/GradeTenMath.aar">
+				<fileset dir="${classes}">
+					<include name="META-INF/**" />
+				</fileset>
+			</jar>
+
+			<jar destfile="${lib}/GradeTenMath.jar">
+				<fileset dir="${classes}">
+					<include name="gradeten/**" />
+				</fileset>
+			</jar>
+		
+		<jar destfile="${lib}/intermediator.jar">
+						<fileset dir="${classes}">
+							<include name="intermediator/**" />
+						</fileset>
+					</jar>
+		
+		<jar destfile="${lib}/filters.jar">
+			<fileset dir="${classes}">
+				<include name="filters/**" />
+			</fileset>
+		</jar>
+		
+		<jar destfile="${lib}/axis-x.jar">
+					<fileset dir="${classes}">
+						<include name="org/**" />
+					</fileset>
+				</jar>
 
 	</target>
 
